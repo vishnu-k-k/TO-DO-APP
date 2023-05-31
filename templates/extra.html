@@ -1,0 +1,47 @@
+
+
+<!--TASK MENU-->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+         <form align="center" method="post" class="mb-3 shadow">
+            {% csrf_token %}
+              <h2>TASK</h2>
+                 <div class="from-group">
+                     <input type="text" class="form-control" name="task" placeholder="Task name"><br>
+                 </div>
+                 <div class="from-group">
+                       <input type="text" class="form-control" name="priority" placeholder="enter your priority"><br>
+                 </div>
+                      <input type="submit" class="btn btn-success">
+                        <p>click to 'submit' your task</p>
+         </form>
+<br>
+            <h6>your tasks are listed here</h6>
+             <div class="col-md-12">
+                 {% for i in task1 %}
+                <div class="shadow card">
+                 <div class="card-body">
+                    <h5 class="card-title">{{i.name}}</h5>
+                    <p><b>{{i.priority}}</b></p>
+                    <a class="btn btn-danger" href="">done</a>
+                 </div>
+                </div>
+                 <br>
+
+             </div>
+
+
+
+
+
+            {% endblock %}
+
+
+
+        </div>
+
+    </div>
+</div>
